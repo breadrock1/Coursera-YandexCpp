@@ -43,14 +43,6 @@ private:
     int day, month, year;
 };
 
-bool operator < (const Date& lhs, const Date& rhs) {}
-
-ostream& operator << (ostream& stream, const Date& date) {}
-
-void EnsureNextSymbolAndSkip(stringstream& stream, const string& data_str) {}
-
-istream& operator >> (istream& stream, Date& date) {}
-
 class Database {
 public:
     void AddEvent(const Date& date, const string& event) {
@@ -91,8 +83,6 @@ private:
     map<Date, set<string>> eventBase;
 };
 
-void OperationParsing(const string& operation, Database& database) {}
-
 
 int main() {
     string operation;
@@ -100,8 +90,9 @@ int main() {
 
     try {
 
-        while (getline(cin, operation))
-            OperationParsing(operation, database);
+        while (getline(cin, operation)) {
+            
+        }
 
     } catch (exception& e) {
         cout << e.what() << endl;
